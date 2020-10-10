@@ -44,3 +44,8 @@ bool TweenManager::remove_tween_queue(TweenQueuePtr q)
     }
     return false;
 }
+
+size_t TweenManager::size()
+{
+    return tweens.size();
+}

@@ -1,6 +1,6 @@
 #ifndef DOUBLEIMAGEBUTTON_H
 #define DOUBLEIMAGEBUTTON_H
-#include "source/buttons/imagebutton.h"
+#include "buttons/imagebutton.h"
 
 enum class ImageType
 {

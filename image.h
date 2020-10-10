@@ -3,7 +3,7 @@
 
 #define GLEW_STATIC
 #include <memory>
-#include "source/globject.h"
+#include "globject.h"
 
 class Image : public GlObject
 {
@@ -16,6 +16,12 @@ class Image : public GlObject
         bool includes(float x, float y);
         float get_top_pixel();
         float get_bottom_pixel();
+        bool is_visible();
+        void draw();
+        void set_visible(bool visibility);
+        int get_index();
+    private:
+        bool visible_flag;
 };
 
 typedef std::shared_ptr <Image> ImagePtr;

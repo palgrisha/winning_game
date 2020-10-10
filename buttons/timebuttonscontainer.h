@@ -1,9 +1,9 @@
 #ifndef TIMEBUTTONSCONTAINER_H
 #define TIMEBUTTONSCONTAINER_H
-#include "source/image.h"
-#include "source/buttons/imagebutton.h"
-#include "source/buttons/doubleimagebutton.h"
-#include "source/resourceloader.h"
+#include "image.h"
+#include "buttons/imagebutton.h"
+#include "buttons/doubleimagebutton.h"
+#include "resourceloader.h"
 
 #include <vector>
 

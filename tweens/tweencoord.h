@@ -1,6 +1,6 @@
 #ifndef TWEENCOORD_H
 #define TWEENCOORD_H
-#include "source/tweens/tweenbase.h"
+#include "tweens/tweenbase.h"
 
 class TweenCoord : public TweenBase
 {

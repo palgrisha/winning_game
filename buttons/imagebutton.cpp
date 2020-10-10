@@ -1,5 +1,5 @@
 #include "imagebutton.h"
-#include "source/tweens/tweenscale.h"
+#include "tweens/tweenscale.h"
 
 ImageButton::ImageButton(ImagePtr image, TweenManagerPtr tmanager, int key) :
     image(image),

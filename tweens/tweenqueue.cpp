@@ -7,6 +7,8 @@ void TweenQueue::add_tween (std::shared_ptr <TweenBase> a)
 
 void TweenQueue::update(float dt)
 {
+    if (tweens.empty())
+        return;
     tweens.front()->update(dt);
     if (tweens.front()->is_finished())
     {

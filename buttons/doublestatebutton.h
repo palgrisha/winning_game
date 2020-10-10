@@ -1,8 +1,8 @@
 #ifndef DOUBLESTATEBUTTON_H
 #define DOUBLESTATEBUTTON_H
 
-#include "source/buttons/doubleimagebutton.h"
-#include "source/tweens/tweenscale.h"
+#include "buttons/doubleimagebutton.h"
+#include "tweens/tweenscale.h"
 
 class DoubleStateButton : public DoubleImageButton
 {

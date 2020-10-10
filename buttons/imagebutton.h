@@ -1,10 +1,10 @@
 #ifndef BUTTON_H
 #define BUTTON_H
-#include "source/image.h"
-#include "source/tweens/tweenmanager.h"
+#include "image.h"
+#include "tweens/tweenmanager.h"
 #include <functional>
 #include <memory>
-#include "source/tweens/tweencurves.h"
+#include "tweens/tweencurves.h"
 #include <vector>
 
 class ImageButton

@@ -1,8 +1,9 @@
 #ifndef TWEENQUEUE_H
 #define TWEENQUEUE_H
-#include "source/tweens/tweenbase.h"
-#include "source/tweens/tweenscale.h"
-#include "source/tweens/tweencoord.h"
+#include "tweens/tweenbase.h"
+#include "tweens/tweenscale.h"
+#include "tweens/tweencoord.h"
+#include "tweens/actiontween.h"
 #include <memory>
 
 class TweenQueue

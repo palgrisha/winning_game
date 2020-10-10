@@ -2,7 +2,7 @@
 #define RESOURCELOADER_H
 #include <map>
 #include <memory>
-#include "source/textureinfo.h"
+#include "textureinfo.h"
 
 class ResourceLoader
 {

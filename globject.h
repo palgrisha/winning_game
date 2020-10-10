@@ -1,8 +1,8 @@
 #ifndef GLDRAWING_H
 #define GLDRAWING_H
-#include "source/sceneinfo.h"
-#include "source/textureinfo.h"
-#include "source/shader.h"
+#include "sceneinfo.h"
+#include "textureinfo.h"
+#include "shader.h"
 #include <vector>
 #include <memory>
 

@@ -1,6 +1,6 @@
 #ifndef TWEENSCALE_H
 #define TWEENSCALE_H
-#include "source/tweens/tweenbase.h"
+#include "tweens/tweenbase.h"
 
 class TweenScale : public TweenBase
 {

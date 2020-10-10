@@ -1,7 +1,7 @@
 #ifndef TWEENMANAGER_H
 #define TWEENMANAGER_H
 #include <vector>
-#include "source/tweens/tweenqueue.h"
+#include "tweens/tweenqueue.h"
 
 class TweenManager
 {
@@ -11,6 +11,7 @@ public:
     void update(float dt);
     bool remove_tween_queue(TweenQueuePtr q);
     void remove_empty_queues();
+    size_t size();
 
 private:
     std::vector <std::shared_ptr <TweenQueue> > tweens;

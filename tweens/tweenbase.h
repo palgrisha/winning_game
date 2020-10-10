@@ -1,6 +1,6 @@
 #ifndef TWEEN_H
 #define TWEEN_H
-#include "source/image.h"
+#include "image.h"
 #include <queue>
 #include <functional>
 
