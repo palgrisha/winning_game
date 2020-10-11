@@ -49,6 +49,7 @@ void Image::set_visible(bool visibility)
 
 void Image::draw()
 {
-    GlObject::paint();
+    if (is_visible())
+        GlObject::paint();
 }
 

@@ -12,8 +12,7 @@ Reel::Reel(float left, float right, float top, float bottom,
     {
         float cur_bottom = bottom + i*(top-bottom) / FIGURES_IN_REEL;
         float cur_top = bottom + (i+1)*(top-bottom) / FIGURES_IN_REEL;
-      //  auto roll = get_random_figure_index();
-      //  auto new_image = std::make_shared<Image>(roll, scene_info);
+
         auto new_image = get_random_figure();
         new_image->set_scale((right-left)/new_image->texture_info->width, (cur_top-cur_bottom)/new_image->texture_info->height);
         new_image->set_center((left+right)/2, (cur_top+cur_bottom)/2);
@@ -26,7 +25,7 @@ void Reel::stop()
 {
     state = State::DELAY;
 
-    auto y_size_of_element = (this->top-this->bottom) / FIGURES_IN_REEL;
+    auto y_size_of_element = (this->top - this->bottom) / FIGURES_IN_REEL;
     auto bounce_depth = y_size_of_element * 0.75;
     auto distance = get_distance() + bounce_depth;
 
@@ -50,40 +49,42 @@ void Reel::stop()
 DoubleImagePtr Reel::get_random_figure()
 {
     int i = rand(3);
-    if (i == 0)
+
+    switch (i)
     {
-        return std::make_shared <DoubleImage>(resource_loader->get("star"), scene_info, resource_loader->get("star_win"));
+        case 0:
+        {
+            return std::make_shared <DoubleImage>(resource_loader->get("star"), scene_info, resource_loader->get("star_win"));
+        }
+
+        case 1:
+        {
+            return std::make_shared <DoubleImage>(resource_loader->get("triangle"), scene_info, resource_loader->get("triangle_win"));
+        }
+
+        case 2:
+        {
+            return std::make_shared <DoubleImage>(resource_loader->get("square"), scene_info, resource_loader->get("square_win"));
+        }
+
+        default:
+        {
+            return std::make_shared <DoubleImage>(resource_loader->get("circle"), scene_info, resource_loader->get("circle_win"));
+        }
     }
-    else if (i == 1)
-    {
-        return std::make_shared <DoubleImage>(resource_loader->get("triangle"), scene_info, resource_loader->get("triangle_win"));
-    }
-    else if (i == 2)
-    {
-        return std::make_shared <DoubleImage>(resource_loader->get("square"), scene_info, resource_loader->get("square_win"));
-    }
-    return std::make_shared <DoubleImage>(resource_loader->get("circle"), scene_info, resource_loader->get("circle_win"));
 }
 
 int Reel::rand (int max)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dist(0,max);
+    std::uniform_int_distribution<> dist(0, max);
     return dist(gen);
-}
-
-void Reel::paint()
-{
-    for (auto image : images)
-    {
-        image->paint();
-    }
 }
 
 float Reel::get_distance()
 {
-    return images[FIGURES_IN_REEL]->get_top_pixel()-top;
+    return images[FIGURES_IN_REEL]->get_top_pixel() - top;
 }
 
 bool Reel::stopped()
@@ -142,6 +143,7 @@ void Reel::update (float dt)
             }
         }
     }
+
     shift_images();
 }
 
@@ -180,10 +182,9 @@ void Reel::shift_images()
 
         images.pop_back();
 
-    //    auto roll = get_random_figure_index();
-    //    auto new_image = std::make_shared<Image>(roll, scene_info);
         auto new_image = get_random_figure();
-        new_image->set_scale((right-left)/new_image->texture_info->width, (cur_top-cur_bottom)/new_image->texture_info->height);
+        new_image->set_scale((right-left) / new_image->texture_info->width,
+                             (cur_top-cur_bottom) / new_image->texture_info->height);
         new_image->set_center((left+right)/2, (cur_top+cur_bottom)/2);
         images.push_back(new_image);
         drawing_manager->add(new_image);

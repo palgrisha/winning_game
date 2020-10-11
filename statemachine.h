@@ -39,4 +39,8 @@ class StateMachine
         TimerManagerPtr timer_manager;
         TimerPtr rotate_timer;
         TweenManagerPtr tween_manager;
+        void make_start_graphic_objects();
+        DrawingManagerPtr drawing_manager;
+        SceneInfoPtr scene_info;
+        ResourceLoaderPtr resource_loader;
 };

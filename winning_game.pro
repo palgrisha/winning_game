@@ -39,7 +39,6 @@ SOURCES += main.cpp \
     tweens/tweenmanager.cpp \
     tweens/tweenqueue.cpp \
     tweens/tweenscale.cpp \
-    makestartobjects.cpp \
     timermanager.cpp \
     timer.cpp \
     doubleimage.cpp \
@@ -67,7 +66,6 @@ HEADERS += \
     tweens/tweenmanager.h \
     tweens/tweenqueue.h \
     tweens/tweenscale.h \
-    makestartobjects.h \
     timermanager.h \
     timer.h \
     doubleimage.h \

@@ -29,10 +29,6 @@ private:
     SceneInfoPtr scene_info;
     TimerManagerPtr timer_manager;
     TweenManagerPtr tween_manager;
-    float last_dt;
-
-
-
 };
 
 typedef std::shared_ptr <RotationManager> RotationManagerPtr;

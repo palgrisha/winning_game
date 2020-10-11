@@ -5,10 +5,7 @@ void DrawingManager::draw()
 {
     for (auto image : images)
     {
-        if (image->is_visible())
-        {
-            image->draw();
-        }
+        image->draw();
     }
 }
 

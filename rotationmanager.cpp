@@ -27,17 +27,14 @@ RotationManager::RotationManager(DrawingManagerPtr drawing_manager, ResourceLoad
                             scene_info,
                             tween_manager,
                             drawing_manager));
-                          //  reels_tween_manager));
     }
 }
 
 void RotationManager::update(float dt)
 {
-    last_dt = dt;
-
     for (auto reel : reels)
     {
-        reel->update(last_dt);
+        reel->update(dt);
     }
 }
 
@@ -54,12 +51,7 @@ void RotationManager::stop_reels()
     reels.at(0)->stop();
     for (size_t i = 1; i < reels.size(); i++)
     {
-        auto stop = [this, i]()
-        {
-            reels.at(i)->stop();
-        };
-
-        auto timer = std::make_shared<Timer>(i*TIMER_MODIFICATOR, stop);
+        auto timer = std::make_shared<Timer>(i*TIMER_MODIFICATOR, [this, i](){reels.at(i)->stop();});
         timer_manager->add_timer(timer);
     }
 }
